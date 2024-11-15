@@ -12,6 +12,8 @@ import logger from './middleware/logger.js';
 
 // import routes
 import userRoutes from './routes/user.js';
+import productRoutes from './routes/product.js';
+import itemRoutes from './routes/item.js';
 
 
 // load environment variables
@@ -51,7 +53,8 @@ if (process.env.NODE_ENV === 'development') {
 
 // use routes
 app.use('/api', userRoutes);
-
+app.use('/api', productRoutes);
+app.use('/api', itemRoutes);
 
 // handle 404
 app.use('*', (req, res) => {
